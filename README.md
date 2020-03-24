@@ -7,6 +7,7 @@
  git clone [url]
  ```
  * git add . （将文件添加到缓存）
+ * git reset HEAD '取消已缓存的文件名'（用于取消已缓存的内容）
  * git status 命令用于查看项目的当前状态（是否修改、提交）
  * git diff（显示已写入缓存与已修改但尚未写入缓存的改动的区别）
  * git commit（将缓存区内容添加到仓库中）（Git 为你的每一个提交都记录你的名字与电子邮箱地址，所以第一步需要配置用户名和邮箱地址）
@@ -14,7 +15,17 @@
  $ git config --global user.name 'runoob'
 $ git config --global user.email test@runoob.com
 ```
-
+* 删除目录文件命令  
+  git rm <file>
+ * 强制删除文件命令  
+git rm -f <file>
+ * 递归删除（进入某个目录中，执行此语句，会删除该目录下的所有文件和子目录。）  
+ git rm –r *
+ * git mv （用于移动或重命名一个文件、目录、软连接）
+ ```
+ $ git mv README  README.md
+ ```
+ 
 
 
 ## 创建版本库
