@@ -1,9 +1,26 @@
+
+## git分支管理
+* HEAD指向当前分支，分支指向提交；每次提交，分支都会向前移动一步
+* 创建新分支同时会创建一个同样的指针，指向上一个分支master相同的提交，再把HEAD指向新建分支，就表示当前分支在dev上
+* 在新创建的分支上每提交一次，指针就会向前一步，而之前分支不变；当合并分支时，就是把上一个分支直接指向本分支的最后一次提交
+* git checkout -b dev（创建并切换到dev分支）或git switch -c dev（最新版本的切换创建命令）或
+```
+git branch dev（创建）
+git checkout dev（切换）
+git switch dev（切换）
+```
+* git branch （查看当前分支）
+* git merge dev（合并指定分支到当前分支）
+* git branch -d dev（删除分支）
+
+
+
 ## git对本地库的管理
 * git log（显示从最近到最远的提交日志）
 * git log --pretty=oneline（简化显示从最近到最远的提交日志）
 * 版本回退git reset --hard HEAD^（回退一个HEAD^,两个HEAD^^,100个HEAD~100）
 * 回退再返回git reset --hard xxxxx（xxx为commit id）;或者git reflog
-
+* git reset命令既可以回退版本，也可以把暂存区的修改回退到工作区。当我们用HEAD时，表示最新的版本。
 
 
 ## git->github（远程仓库）
