@@ -1,4 +1,10 @@
 ## git对本地库的管理
+* git log（显示从最近到最远的提交日志）
+* git log --pretty=oneline（简化显示从最近到最远的提交日志）
+* 版本回退git reset --hard HEAD^（回退一个HEAD^,两个HEAD^^,100个HEAD~100）
+* 回退再返回git reset --hard xxxxx（xxx为commit id）;或者git reflog
+
+
 
 ## git->github（远程仓库）
 * 在公司是实现多人分工合作的都会用到github，github就是我们的远程仓库（需注册）  
