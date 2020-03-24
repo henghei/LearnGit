@@ -1,3 +1,30 @@
+## git对本地库的管理
+
+## git->github（远程仓库）
+* 在公司是实现多人分工合作的都会用到github，github就是我们的远程仓库（需注册）  
+[github地址](https://github.com)
+* 本地库与远程仓库初次建立连接需要ssh密钥，查看本地git库是否有.ssh/文件夹，若无执行以下命令生成一对密钥
+```
+$ ssh-keygen -t rsa -C "youremail@example.com"
+```
+* 之后会要求确认路径和输入密码，我们这使用默认的一路回车就行。成功的话会在 ~/ 下生成 .ssh 文件夹，进去，打开 id_rsa.pub，复制里面的 key回到 github 上，进入 Account => Settings（账户配置）,选择 SSH and GPG keys，然后点击 New SSH key 按钮,title 设置标题，可以随便填，粘贴在你电脑上生成的 key
+* 为了验证是否成功，输入以下命令：
+```
+$ ssh -T git@github.com
+```
+* 提示Hi tianqixin! You've successfully authenticated, but GitHub does not provide shell access.命令说明我们已成功连上 Github
+* 在github创建新的仓库，之后就可以根据新仓库提示在本地仓库运行命令
+1. 本地仓库获取github的更新信息
+* 从远程仓库下载新分支与数据：  
+git fetch  
+* 从远端仓库提取数据并尝试合并到当前分支  
+git merge  
+2. github获取本地的更新信息
+* 修改本地库文件
+* git add .
+* git commit -m'备注'
+* git push -u origin master（第一次push一定要这样写，第二次就可以直接git push）
+
 
 ## git 基本操作
 * git init
