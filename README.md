@@ -12,6 +12,18 @@ git switch dev（切换）
 * git branch （查看当前分支）
 * git merge dev（合并指定分支到当前分支）
 * git branch -d dev（删除分支）
+* 解决冲突（若多个分支同时修改不同位置，则不能合并，要解决冲突方能合并，解决完查看冲突代码如下）
+```
+git log --graph --pretty=oneline或git log --graph
+```
+* 如何禁用Fast forward模式（用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而fast forward合并就看不出来曾经做过合并）
+```
+git merge --no-ff -m "备注" dev
+```
+* git stash （当你在开发一个未提交的项目时，突然要修复一个线上bug，这是上手bug前要先把正在开发的工作区存储起来）
+* git stash list（bug修复完成查看开发项目）
+* git cherry-pick commitId（开发dev分支时需要修补master的bug，此时dev肯定也有master的bug；master的bug修复完，也要修复dev的，所以可以直接把修复master的命令的commitId复制过来即可）
+* git stash pop（恢复项目的同时把stash内容也删了）
 
 
 
