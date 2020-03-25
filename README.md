@@ -24,7 +24,20 @@ git merge --no-ff -m "备注" dev
 * git stash list（bug修复完成查看开发项目）
 * git cherry-pick commitId（开发dev分支时需要修补master的bug，此时dev肯定也有master的bug；master的bug修复完，也要修复dev的，所以可以直接把修复master的命令的commitId复制过来即可）
 * git stash pop（恢复项目的同时把stash内容也删了）
-
+* git branch -D dev（强制删除分支）
+* git remote -v（查看远程库的版本信息）
+* git push origin master/dev（指定本地分支推送到远程）
+* git checkout -b dev origin/dev（本地抓取远程分支默认抓取的是master）
+*  git push origin dev（本地推送远程分支）
+* 多人合作时，可以先git push origin <branch-name>推送自己的修改  
+ 如果推送失败，则因为远程分支比你的本地更新，需要先用git pull试图合并,  
+ 如果合并有冲突，则解决冲突，并在本地提交；  
+ 没有冲突或者解决掉冲突后，再用git push origin <branch-name>推送就能成功  
+ 如果git pull提示no tracking information，则说明本地分支和远程分支的链接关系没有创建，用命令git branch --set-upstream branch-name origin/branch-name。  
+```
+git pull（小伙伴提交后git pull会出现合并冲突，所以要先手动解决冲突，然后继续下面）
+git push origin dev，
+```
 
 
 ## git对本地库的管理
